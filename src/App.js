@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { GlobalStyle } from "./GlobalStyle";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { UserStorage } from "./UserContext";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faUserAlt,
+  faSignInAlt,
+  faSignOutAlt,
+  faPaw,
+  faSpinner,
+} from "@fortawesome/free-solid-svg-icons";
+import Header from "./components/Header";
+import Footer from "./components/Footer/Footer";
+import Home from "./pages/Home/Home";
+import Login from "./pages/Login/Login";
+import Account from "./pages/Account/Acoount";
 
 function App() {
+  library.add(faUserAlt, faSignInAlt, faSignOutAlt, faPaw, faSpinner);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <BrowserRouter>
+        <UserStorage>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login/*" element={<Login />} />
+            <Route path="/account" element={<Account />} />
+          </Routes>
+          <Footer />
+        </UserStorage>
+      </BrowserRouter>
     </div>
   );
 }
