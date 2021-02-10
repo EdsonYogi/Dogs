@@ -27,7 +27,7 @@ const PrivateRoute = ({ path, element }) => {
 const routes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/profile/:user" element={<Profile />} />
       <Route path="/login" element={<Login />}>
         <Route path="/" element={<LoginForm />} />
