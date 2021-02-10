@@ -7,3 +7,9 @@ export const ForgotPasswordContent = styled.section`
   margin-left: 50px;
   animation: var(--animation-left);
 `;
+
+export const Message = styled.span`
+  font-size: 25px;
+  color: var(--color-primary);
+  animation: var(--animation-left);
+`;

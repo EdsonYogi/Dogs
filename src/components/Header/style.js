@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { Container } from "../../GlobalStyle";
+import { Container } from "../../assets/GlobalStyle";
 import { Link } from "react-router-dom";
-import Button from "../Button";
 
 export const Navigation = styled.nav`
   position: fixed;
   top: 0;
-  z-index: 100;
+  z-index: 9999;
   width: 100%;
   padding: 20px 0;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
@@ -32,12 +31,7 @@ export const Login = styled(Link)`
   }
 `;
 
-export const UserMenu = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const User = styled.span`
+export const User = styled(Link)`
   font-weight: bold;
   text-transform: capitalize;
   color: var(--color-primary);
@@ -45,17 +39,5 @@ export const User = styled.span`
   svg {
     font-size: 20px;
     margin-left: 10px;
-  }
-`;
-
-export const Logout = styled(Button)`
-  && {
-    text-align: center;
-    margin-left: 50px;
-    padding: 5px;
-  }
-
-  svg {
-    font-size: 25px;
   }
 `;

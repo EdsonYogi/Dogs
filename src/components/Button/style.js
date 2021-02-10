@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const ButtonDefault = styled.button`
+  width: ${(props) => props.wd || "100px"};
+  height: ${(props) => props.hg || "40px"};
+  margin-top: ${(props) => props.mt || 0};
+  margin-right: ${(props) => props.mr || 0};
+  margin-bottom: ${(props) => props.mb || 0};
+  margin-left: ${(props) => props.ml || 0};
+
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 20px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  text-align: center;
+  font-size: 14px;
+  letter-spacing: 2px;
   color: var(--color-others);
   outline: none;
   border: 2px solid var(--color-primary);
@@ -22,7 +27,6 @@ export const ButtonDefault = styled.button`
   }
 
   svg {
-    margin-left: 5px;
     font-size: 18px;
   }
 `;

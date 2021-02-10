@@ -1,19 +1,10 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import {
-  ContainerHeader,
-  Navigation,
-  Logo,
-  Login,
-  UserMenu,
-  User,
-  Logout,
-} from "./style";
+import { ContainerHeader, Navigation, Logo, Login, User } from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { UserContext } from "../../UserContext";
 
 const Header = () => {
-  const { data, userLogout } = useContext(UserContext);
+  const { data } = useContext(UserContext);
 
   return (
     <Navigation>
@@ -22,17 +13,10 @@ const Header = () => {
           <FontAwesomeIcon icon="paw" />
         </Logo>
         {data ? (
-          <UserMenu>
-            <User>
-              {data.nome}
-              <FontAwesomeIcon icon="user-alt" />
-            </User>
-            <Logout
-              onClick={userLogout}
-              icon="sign-out-alt"
-              title="Logout"
-            ></Logout>
-          </UserMenu>
+          <User to="/account">
+            {data.nome}
+            <FontAwesomeIcon icon="user-alt" />
+          </User>
         ) : (
           <Login to="login">
             Login / Register

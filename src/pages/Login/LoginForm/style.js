@@ -1,12 +1,11 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Button from "../../../components/Button";
 
-export const LoginContent = styled.div`
+export const LoginContent = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 50px;
+  padding: 0 50px;
 `;
 
 export const ForgotPassword = styled(Link)`
@@ -16,34 +15,6 @@ export const ForgotPassword = styled(Link)`
   margin: 20px 0;
   &:hover {
     text-decoration: underline;
-  }
-`;
-
-export const LoginButton = styled(Button)`
-  width: 100px;
-  margin-bottom: 20px;
-`;
-
-export const ButtonLoading = styled(Button)`
-  width: 100px;
-  margin-bottom: 20px;
-
-  &:hover {
-    background-color: var(--color-primary);
-    color: var(--color-others);
-  }
-
-  svg {
-    font-size: 20px;
-    margin: 0 auto;
-    transform: rotate(20deg);
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    100% {
-      transform: rotate(360deg);
-    }
   }
 `;
 
@@ -66,10 +37,4 @@ export const Register = styled.div`
     color: var(--color-primary);
     margin: 30px 0;
   }
-`;
-
-export const ErrorLogin = styled.span`
-  display: block;
-  margin: 20px 0;
-  color: var(--color-error);
 `;

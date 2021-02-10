@@ -1,34 +1,21 @@
 import React from "react";
-import { GlobalStyle } from "./GlobalStyle";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Routes from "./routes";
+import { BrowserRouter } from "react-router-dom";
+import { GlobalStyle } from "./assets/GlobalStyle";
 import { UserStorage } from "./UserContext";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import {
-  faUserAlt,
-  faSignInAlt,
-  faSignOutAlt,
-  faPaw,
-  faSpinner,
-} from "@fortawesome/free-solid-svg-icons";
+import fontAwesome from "./assets/fontAwesome";
 import Header from "./components/Header";
-import Footer from "./components/Footer/Footer";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Account from "./pages/Account/Acoount";
+import Footer from "./components/Footer";
 
 function App() {
-  library.add(faUserAlt, faSignInAlt, faSignOutAlt, faPaw, faSpinner);
+  fontAwesome();
   return (
     <div className="App">
       <GlobalStyle />
       <BrowserRouter>
         <UserStorage>
           <Header />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login/*" element={<Login />} />
-            <Route path="/account" element={<Account />} />
-          </Routes>
+          <Routes />
           <Footer />
         </UserStorage>
       </BrowserRouter>

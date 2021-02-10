@@ -1,5 +1,6 @@
 import React from "react";
-import { Input, Label, Text, Error } from "./style";
+import { Input, Label, Text } from "./style";
+import ErrorMessage from "../ErrorMessage";
 
 const InputForm = ({ id, label, type, value, onChange, error, onBlur }) => {
   return (
@@ -12,7 +13,7 @@ const InputForm = ({ id, label, type, value, onChange, error, onBlur }) => {
         onChange={onChange}
         onBlur={onBlur}
       />
-      {error && <Error>{error}</Error>}
+      {error && <ErrorMessage>{error}</ErrorMessage>}
     </Input>
   );
 };

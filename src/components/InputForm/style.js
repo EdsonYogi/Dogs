@@ -14,7 +14,7 @@ export const Label = styled.label`
 `;
 
 export const Text = styled.input`
-  width: 300px;
+  width: 400px;
   background-color: var(--color-secondary);
   border: 2px solid var(--color-primary);
   border-radius: 5px;
@@ -33,9 +33,4 @@ export const Text = styled.input`
   &:hover {
     box-shadow: 0px 0px 5px var(--color-primary);
   }
-`;
-
-export const Error = styled.p`
-  color: tomato;
-  margin-top: 10px;
 `;

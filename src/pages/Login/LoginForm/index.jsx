@@ -1,19 +1,14 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import useForm from "../../../hooks/useForm";
 import { UserContext } from "../../../UserContext";
-
 import InputForm from "../../../components/InputForm";
-import Button from "../../../components/Button";
 import Title from "../../../components/Title";
-import {
-  LoginContent,
-  ForgotPassword,
-  LoginButton,
-  ButtonLoading,
-  Register,
-  ErrorLogin,
-} from "./style";
+import ErrorMessage from "../../../components/ErrorMessage";
+import Button from "../../../components/Button";
+import ButtonLink from "../../../components/ButtonLink";
+import LoadingButton from "../../../components/LoadingButton";
+import Head from "../../../components/Head";
+import { LoginContent, ForgotPassword, Register } from "./style";
 
 const LoginForm = () => {
   const { userLogin, loading, error } = useContext(UserContext);
@@ -22,10 +17,7 @@ const LoginForm = () => {
     password: useForm(),
   };
 
-  console.log(error);
-
   const handleSubmit = async (event) => {
-    console.log("Login");
     event.preventDefault();
     if (login.username.validate && login.password.validate) {
       userLogin(login.username.value, login.password.value);
@@ -34,6 +26,7 @@ const LoginForm = () => {
 
   return (
     <LoginContent>
+      <Head title="Login" descripton="Login" />
       <Title>Login</Title>
       <form onSubmit={handleSubmit}>
         <InputForm label="User" id="username" type="text" {...login.username} />
@@ -46,21 +39,20 @@ const LoginForm = () => {
         <ForgotPassword to="forgotPassword">
           forgot your username/password?
         </ForgotPassword>
+
         {loading ? (
-          <ButtonLoading icon="spinner" disabled={true} />
+          <LoadingButton icon="spinner" disabled={true} mb="20px" />
         ) : (
-          <LoginButton>Log In</LoginButton>
+          <Button mb="20px">Log In</Button>
         )}
 
-        {error && <ErrorLogin>{error}</ErrorLogin>}
+        {error && <ErrorMessage>{error}</ErrorMessage>}
       </form>
 
       <Register>
         <h2>Register</h2>
         <p>Don't have an account yet? Register on the site.</p>
-        <Link to="register">
-          <Button>Register</Button>
-        </Link>
+        <ButtonLink to="register">Register</ButtonLink>
       </Register>
     </LoginContent>
   );
