@@ -17,6 +17,7 @@ export const Navagation = styled.div`
   position: absolute;
   left: -200px;
   top: 52px;
+  z-index: 9999;
   width: 250px;
   border: 2px solid var(--color-primary);
   background-color: var(--color-others);

@@ -1,9 +1,11 @@
 import styled from "styled-components";
-import { Container } from "../../assets/GlobalStyle";
 import Button from "../../components/Button";
 import ButtonLink from "../../components/ButtonLink";
 
-export const ContainerAccount = styled(Container)``;
+export const Content = styled.section`
+  min-height: calc(100vh - 200px);
+  margin-bottom: 50px;
+`;
 
 export const HeaderAccount = styled.div`
   display: flex;

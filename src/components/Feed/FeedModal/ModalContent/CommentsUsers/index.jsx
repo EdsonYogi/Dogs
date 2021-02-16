@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { CommentsList, Comment } from "./style";
 
 const CommentsUsers = ({ comments, className }) => {
@@ -7,7 +8,13 @@ const CommentsUsers = ({ comments, className }) => {
       {comments &&
         comments
           .map(
-            ({ comment_author, comment_content, comment_ID, comment_date }) => {
+            ({
+              comment_author,
+              comment_content,
+              comment_ID,
+              comment_date,
+              user_id,
+            }) => {
               const date = comment_date
                 .slice(0, 10)
                 .split("-")
@@ -17,7 +24,9 @@ const CommentsUsers = ({ comments, className }) => {
               return (
                 <Comment key={comment_ID}>
                   <div>
-                    <span>{`@${comment_author}`}</span>
+                    <Link to={`/photo/${user_id}`} hg="20px">
+                      @{comment_author}
+                    </Link>
                     <span>{date}</span>
                   </div>
                   <p>{comment_content}</p>

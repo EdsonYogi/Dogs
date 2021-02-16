@@ -3,9 +3,9 @@ import { Photo, View } from "./style";
 
 import Image from "../../../Image";
 
-const FeedPhotosItem = ({ id, src, title, acessos, setModal }) => {
+const FeedPhotosItem = ({ id, setId, src, title, acessos }) => {
   return (
-    <Photo id={id} onClick={() => setModal(id)}>
+    <Photo id={id} onClick={() => setId(id)}>
       <Image src={src} alt={title} />
       <View views={acessos} />
     </Photo>

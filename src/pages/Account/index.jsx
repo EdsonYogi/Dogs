@@ -4,15 +4,18 @@ import useMedia from "../../hooks/useMedia";
 import MenuWeb from "../../components/MenuWeb";
 import MenuMobile from "../../components/MenuMobile";
 import { Container } from "../../assets/GlobalStyle";
+import { Content } from "./style";
 
 const Account = () => {
   const mobile = useMedia("(max-width: 640px)");
 
   return (
-    <Container>
-      {mobile ? <MenuMobile /> : <MenuWeb />}
-      <Outlet />
-    </Container>
+    <Content>
+      <Container>
+        {mobile ? <MenuMobile /> : <MenuWeb />}
+        <Outlet />
+      </Container>
+    </Content>
   );
 };
 

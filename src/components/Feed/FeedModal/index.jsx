@@ -6,7 +6,7 @@ import ErrorMessage from "../../ErrorMessage";
 import ModalContent from "./ModalContent";
 import { Modal } from "./style";
 
-const FeedModal = ({ onClick, id }) => {
+const FeedModal = ({ onClick, id, modal }) => {
   const { data, error, loading, request } = useFetch();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const FeedModal = ({ onClick, id }) => {
     } else if (loading) {
       return <LoadingPage />;
     } else if (data) {
-      return <ModalContent dataPhoto={data.photo} />;
+      return <ModalContent dataPhoto={data.photo} modal={modal} />;
     } else {
       return null;
     }

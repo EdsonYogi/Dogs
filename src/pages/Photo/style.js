@@ -5,18 +5,21 @@ export const PhotoContent = styled(DataPhoto)`
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  min-height: 100vh;
+  height: 100%;
   margin: 50px 0;
 
   img {
-    width: 700px;
-    height: auto;
+    width: 100%;
     border-radius: 10px;
-    margin: 0 auto;
-    margin-bottom: 50px;
   }
 
-  #dataDog {
-    margin: 0;
+  .InfoPhoto {
+    padding: 0;
+    margin: 50px 0;
+    .commentsUsers {
+      margin: 20px 0;
+      max-height: 400px;
+    }
   }
 `;

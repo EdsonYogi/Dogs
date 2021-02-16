@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const CommentsList = styled.ul`
-  width: calc(100% - 20px);
+  width: 100%;
   overflow-y: auto;
-
   &::-webkit-scrollbar {
     display: none;
   }

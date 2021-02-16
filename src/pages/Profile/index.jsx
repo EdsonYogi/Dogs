@@ -7,7 +7,6 @@ import { User } from "./styled";
 
 const Profile = () => {
   const { user } = useParams();
-  console.log({ user });
   return (
     <Fragment>
       <Head title={`Profile: ${user}`} description="Profile" />

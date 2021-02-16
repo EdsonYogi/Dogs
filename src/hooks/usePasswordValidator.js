@@ -53,7 +53,7 @@ const usePasswordValidator = (password) => {
 
   useEffect(() => {
     passwordValidator(password);
-  }, [password]);
+  });
 
   return {
     passwordValidator,

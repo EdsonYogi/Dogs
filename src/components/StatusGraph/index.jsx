@@ -24,26 +24,10 @@ const StatusGraph = ({ data }) => {
           views: +acessos,
         };
       });
-
-      console.log();
       setGraph(dataGraph);
     }
   }, [data]);
 
-  const colorScale = [
-    "#928C00",
-    "#928C00",
-    "#A49800",
-    "#B6A300",
-    "#C8AC00",
-    "#DBB500",
-    "#EDBC0D",
-    "#F1C21D",
-    "#DCBD50",
-    "#CDBB7D",
-    "#C5BDA3",
-    "#C3C3C3",
-  ];
   return (
     <section>
       <TotalViews>Total de Acessos: {total}</TotalViews>

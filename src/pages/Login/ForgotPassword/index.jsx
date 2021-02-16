@@ -20,8 +20,7 @@ const ForgotPassword = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const { responseFetch, dataJson } = await request(url, options);
-    console.log(error);
+    await request(url, options);
   };
 
   return (

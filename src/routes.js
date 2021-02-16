@@ -20,7 +20,7 @@ const PrivateRoute = ({ path, element }) => {
   if (login === true) {
     return <Route path={path} element={element} />;
   } else if (login === false) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 };
 
@@ -37,7 +37,7 @@ const routes = () => {
         <Route path="/*" element={<NotFound />} />
       </Route>
       <Route path="/photo/:id" element={<Photo />} />
-      <Route path="*" element={<NotFound />} />
+      <Route path="/*" element={<NotFound />} />
       <PrivateRoute path="/account" element={<Account />}>
         <Route path="/" element={<MyAccount />} />
         <Route path="/statistics" element={<Statistics />} />

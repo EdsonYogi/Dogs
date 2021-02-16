@@ -6,6 +6,19 @@ export const LoginContent = styled.section`
   flex-direction: column;
   justify-content: center;
   padding: 0 50px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 50px 5%;
+    align-items: center;
+    width: 100%;
+
+    form {
+      width: 100%;
+      input {
+        width: 100%;
+      }
+    }
+  }
 `;
 
 export const ForgotPassword = styled(Link)`
@@ -19,6 +32,8 @@ export const ForgotPassword = styled(Link)`
 `;
 
 export const Register = styled.div`
+  width: 100%;
+  margin-top: 50px;
   h2 {
     color: var(--color-primary);
 

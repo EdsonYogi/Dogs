@@ -5,7 +5,7 @@ export const Modal = styled.div`
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh + 75px);
   position: fixed;
   top: 0;
   left: 0;

@@ -1,10 +1,8 @@
 import styled, { keyframes } from "styled-components";
 
 export const Content = styled.div`
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  grid-template: 100%/100%;
+  display: flex;
+  width: 100%;
   grid-area: 1/1;
 `;
 
@@ -19,8 +17,7 @@ const skeleton = keyframes`
 `;
 
 export const SkeletonImg = styled.div`
-  grid-area: 1/1;
-  height: 100%;
+  flex: 1;
   background-image: linear-gradient(
     90deg,
     #dddddd 0%,
@@ -30,7 +27,7 @@ export const SkeletonImg = styled.div`
   background-color: #dddddd;
   background-size: 200%;
   animation: ${skeleton} 1.5s infinite linear;
-  opacity: 0.1;
+  opacity: 1;
 `;
 
 export const Img = styled.img`

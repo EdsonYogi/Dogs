@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const FooterDogs = styled.footer`
   background-color: var(--color-others);
-  margin-top: 100px;
 `;
 
 export const Content = styled.section`

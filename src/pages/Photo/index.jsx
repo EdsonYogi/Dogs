@@ -13,13 +13,14 @@ const Photo = () => {
   const [dataPhoto, setDataPhoto] = useState(null);
   const { url, options } = PHOTO_GET(id);
 
+  const fetchData = async () => {
+    const { dataJson, responseFetch } = await request(url, options);
+    if (responseFetch.ok) {
+      setDataPhoto(dataJson.photo);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const { dataJson, responseFetch } = await request(url, options);
-      if (responseFetch.ok) {
-        setDataPhoto(dataJson.photo);
-      }
-    };
     fetchData();
   }, []);
 

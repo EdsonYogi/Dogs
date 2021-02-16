@@ -5,36 +5,60 @@ import { Loading } from "./style";
 
 const Feed = ({ getPhotos }) => {
   const [modal, setModal] = useState(null);
+  const [id, setId] = useState(null);
   const [pages, setPages] = useState([1]);
   const [lastPage, setLastPage] = useState(false);
   const [loading, setLoading] = useState(null);
 
   const infiniteScroll = () => {
-    const currentScroll = window.scrollY;
-    const currentHeight = document.body.offsetHeight - window.innerHeight;
-    if (currentScroll >= currentHeight && !lastPage) {
+    const currentScrollY = window.scrollY;
+
+    const currentHeight =
+      document.body.offsetHeight -
+      window.innerHeight -
+      document.querySelector("footer").getBoundingClientRect().height;
+
+    if (currentScrollY >= currentHeight && !lastPage) {
       setPages([...pages, pages.length + 1]);
     }
   };
 
   useEffect(() => {
-    if (!loading) {
-      window.addEventListener("scroll", infiniteScroll);
-      window.addEventListener("wheel", infiniteScroll);
-      return () => {
-        window.removeEventListener("scroll", infiniteScroll);
-        window.removeEventListener("wheel", infiniteScroll);
-      };
-    }
+    window.addEventListener("scroll", infiniteScroll);
+    window.addEventListener("wheel", infiniteScroll);
+    return () => {
+      window.removeEventListener("scroll", infiniteScroll);
+      window.removeEventListener("wheel", infiniteScroll);
+    };
   }, [pages]);
+
+  useEffect(() => {
+    if (id) {
+      setModal(true);
+    } else {
+      setModal(false);
+    }
+
+    if (modal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "visible";
+    }
+
+    return () => {
+      setModal(false);
+      document.body.style.overflow = "visible";
+    };
+  }, [modal, id]);
 
   return (
     <Fragment>
-      {modal && (
+      {id && (
         <FeedModal
-          id={modal}
+          id={id}
+          modal={modal}
           onClick={({ target }) =>
-            [...target.classList].includes("active") && setModal(null)
+            [...target.classList].includes("active") && setId(null)
           }
         />
       )}
@@ -43,7 +67,7 @@ const Feed = ({ getPhotos }) => {
         return (
           <FeedPhotos
             key={page}
-            setModal={setModal}
+            setId={setId}
             getPhotos={getPhotos}
             page={page}
             setLastPage={setLastPage}

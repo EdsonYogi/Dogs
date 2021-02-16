@@ -11,7 +11,7 @@ const Image = ({ alt, ...props }) => {
 
   return (
     <Content>
-      {!imgLoad && <SkeletonImg />}
+      {imgLoad && <SkeletonImg />}
       <Img alt={alt} {...props} onLoad={onLoadImg} />
     </Content>
   );

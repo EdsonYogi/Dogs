@@ -6,7 +6,6 @@ const useForm = (type) => {
   const [error, setError] = useState(null);
   const {
     passwordValidator,
-    emptyPassword,
     lowercase,
     uppercase,
     number,

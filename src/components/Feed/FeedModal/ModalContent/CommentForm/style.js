@@ -4,7 +4,7 @@ export const CommentField = styled.form`
   display: flex;
   textarea {
     display: block;
-    width: calc(100% - 95px);
+    width: 100%;
     height: 75px;
     font-size: 16px;
     color: var(--color-primary);

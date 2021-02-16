@@ -36,7 +36,6 @@ const Register = () => {
 
       const { responseFetch } = await request(url, options);
       if (responseFetch.ok) {
-        console.log(username.value, password.value);
         userLogin(username.value, password.value);
       }
     }
