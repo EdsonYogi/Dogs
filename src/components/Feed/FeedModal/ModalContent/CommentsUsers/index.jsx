@@ -8,13 +8,7 @@ const CommentsUsers = ({ comments, className }) => {
       {comments &&
         comments
           .map(
-            ({
-              comment_author,
-              comment_content,
-              comment_ID,
-              comment_date,
-              user_id,
-            }) => {
+            ({ comment_author, comment_content, comment_ID, comment_date }) => {
               const date = comment_date
                 .slice(0, 10)
                 .split("-")
@@ -24,7 +18,7 @@ const CommentsUsers = ({ comments, className }) => {
               return (
                 <Comment key={comment_ID}>
                   <div>
-                    <Link to={`/photo/${user_id}`} hg="20px">
+                    <Link to={`/profile/${comment_author}`}>
                       @{comment_author}
                     </Link>
                     <span>{date}</span>

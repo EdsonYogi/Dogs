@@ -87,7 +87,7 @@ const ModalContent = ({ dataPhoto, modal, className }) => {
                 Delete
               </Button>
             ) : (
-              <Link to={`/profile/${dataPhoto.author}`} hg="20px">
+              <Link to={`/profile/${dataPhoto.author}`}>
                 @{dataPhoto.author}
               </Link>
             )}
