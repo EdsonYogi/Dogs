@@ -28,6 +28,7 @@ const routes = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/photo/:id" element={<Photo />} />
       <Route path="/profile/:user" element={<Profile />} />
       <Route path="/login" element={<Login />}>
         <Route path="/" element={<LoginForm />} />
@@ -36,7 +37,6 @@ const routes = () => {
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/*" element={<NotFound />} />
       </Route>
-      <Route path="/photo/:id" element={<Photo />} />
       <Route path="/*" element={<NotFound />} />
       <PrivateRoute path="/account" element={<Account />}>
         <Route path="/" element={<MyAccount />} />
